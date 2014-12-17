@@ -1,19 +1,16 @@
 from pyomo.core import *
 import random
 
-def mem_strip(model):
-  return repr(model).strip('>').split()[-1]
-
-model = ConcreteModel()
-print mem_strip(model), id(model)
-
-MEM = set()
 IDS = set()
+models = set()
+N = 1000
 
-for _ in xrange(100):
+for _ in xrange(N):
   model = ConcreteModel()
   model.foo = Param(initialize=random.randint(2, 10))
-  MEM.add(mem_strip(model))
   IDS.add(id(model))
+  models.add(model)
 
-print len(MEM), len(IDS)
+
+print len(IDS)
+print "Percent of IDs that are unique: {0:.2%}".format(1.*len(IDS)/N)

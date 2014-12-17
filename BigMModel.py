@@ -18,6 +18,8 @@ from Function_Module import *
 #                           DECLARE MODEL constraintS
 #-----------------------------------------------------------------------------
 
+MODEL = ConcreteModel()
+
 class Struct():
     pass
 
@@ -49,9 +51,9 @@ def big_m_model(PUTAWAY=None, PICKING=None):
             rd.lambda_pick = {j:rd.lambda_pick[j] for j in rd.PICKING}
             rd.C_pick = {j:rd.C_pick[j] for j in rd.PICKING}
 
-    print rd.PUTAWAY, rd.PICKING
+    if not (PICKING is None and PUTAWAY is None): print rd.PUTAWAY, rd.PICKING
     model = ConcreteModel()
-
+    # print repr(model).strip('>').split()[-1]
     #-----------------------------------------------------------------------------
     #                           DECLARE MODEL PARAMETERS
     #-----------------------------------------------------------------------------
@@ -84,19 +86,16 @@ def big_m_model(PUTAWAY=None, PICKING=None):
     def K_init(model, s): return 10000000
     model.K_s = Param(model.STORES, initialize=K_init)
 
-    def L_init(model): return 0
-    model.L = Param(initialize=L_init)
+    model.Script_Q = 15000
 
-    model.Script_Q = Param(initialize=15000)
+    model.phi_put = 1.0
+    model.phi_pick = 1.0
+    model.gamma = 0.5
 
-    model.phi_put = Param(initialize=1.0)
-    model.phi_pick = Param(initialize=1.0)
-    model.gamma = Param(initialize=0.5)
-
-    model.pt = Param(initialize=1)
-    model.tb = Param(initialize=rd.tb)
-    model.te = Param(initialize=rd.te)
-    model.ty = Param(initialize=rd.ty)
+    model.pt = 1
+    model.tb = rd.tb
+    model.te = rd.te
+    model.ty = rd.ty
 
     model.Demand = Param(model.STORES, model.PRODUCTS, model.TIMES, initialize=rd.Demand)
 
@@ -108,8 +107,8 @@ def big_m_model(PUTAWAY=None, PICKING=None):
     X_ivq = {tup:rd.X_ivq[tup] for tup in model.OMEGA_Q}
     model.X_ivq = Param(model.OMEGA_Q, initialize=X_ivq)
     model.X_osq = Param(model.STORES, model.FASHION, initialize=rd.X_osq)
-    model.C_alpha = Param(initialize=rd.C_alpha)
-    model.C_beta = Param(initialize=rd.C_beta)
+    model.C_alpha = rd.C_alpha
+    model.C_beta = rd.C_beta
 
     def C_hp_init(model, p): return .01
 
@@ -134,8 +133,8 @@ def big_m_model(PUTAWAY=None, PICKING=None):
     model.Cth_put = Param(model.PUTAWAY, initialize=rd.C_put)
     model.Cth_pick = Param(model.PICKING, initialize=rd.C_pick)
 
-    model.BigM = Param(initialize=rd.BigM)
-    model.M_MHE = Param(initialize=rd.M_MHE)
+    model.BigM = rd.BigM
+    model.M_MHE = rd.M_MHE
 
     #-----------------------------------------------------------------------------
     #                           DECLARE MODEL VARIABLES
@@ -259,6 +258,16 @@ def big_m_model(PUTAWAY=None, PICKING=None):
     model.ConstraintFour = Constraint(model.PUTAWAY, model.TIMES, rule=ConstraintFour)
 
 
+    def constraint1(model):
+        return sum(model.theta_put[i] for i in model.PUTAWAY) == 1
+
+    model.constraint1 = Constraint(rule=constraint1)
+
+    def constraint2(model):
+        return sum(model.theta_pick[j] for j in model.PICKING) == 1
+
+    model.constraint2 = Constraint(rule=constraint2)
+
     def ConstraintFive(model, j, t):
         Five_expr1 = sum(model.x_spt[s,p,t] for s in model.STORES for p in model.PRODUCTS)
         Five_expr1 += sum(model.X_osq[s,q] * model.rho_sqt[s,q,t] for s in model.STORES for q in model.FASHION)
@@ -267,8 +276,6 @@ def big_m_model(PUTAWAY=None, PICKING=None):
 
     model.ConstraintFive = Constraint(model.PICKING, model.TIMES, rule=ConstraintFive)
 
-    model.constraint1 = Constraint(expr=summation(model.theta_put) == 1)
-    model.constraint2 = Constraint(expr=summation(model.theta_pick) == 1)
 
     # Constraint Six
     def ConstraintSixPutaway(model, t):
@@ -312,7 +319,7 @@ def big_m_model(PUTAWAY=None, PICKING=None):
     # Constraint Nine
     def ConstraintNine(model, s, q):
         Nine_expr1 = sum(t * model.rho_sqt[s, q, t] for t in model.TIMES)
-        Nine_expr2 = model.ty - model.L
+        Nine_expr2 = model.ty
         return (Nine_expr1 - Nine_expr2 <= 0)
 
     model.ConstraintNine = Constraint(model.STORES, model.FASHION, rule=ConstraintNine)
@@ -353,8 +360,6 @@ def big_m_model(PUTAWAY=None, PICKING=None):
 
     # Constraint Eleven and Twelve
     def ConstraintEleven(model, s, p, t):
-        assert model.L == 0
-
         Eleven_expr1 = model.z_spt[s,p,t]
         Eleven_expr2 = model.x_spt[s,p,t]
         return (Eleven_expr1 - Eleven_expr2 == 0)
@@ -364,7 +369,6 @@ def big_m_model(PUTAWAY=None, PICKING=None):
 
     # Constraint Thirteen
     def ConstraintThirteen(model, s, q, t):
-        assert model.L== 0
         if model.tb <= t <= model.ty:
             Thirteen_expr1 = model.z_sqt[s,q,t]
             Thirteen_expr2 = model.X_osq[s,q] * model.rho_sqt[s,q,t]
@@ -452,6 +456,8 @@ def big_m_model(PUTAWAY=None, PICKING=None):
 
     model.ConstraintTwentyOne = Constraint(model.STORES, model.TIMES, rule=ConstraintTwentyOne)
 
+    global MODEL
+    MODEL = model
     return model.create()
 
 def solve_big_m_model(solver='gurobi', time_limit=None, gap=None, output=True,
@@ -541,11 +547,11 @@ def big_M_output(inst):
 
     tech = 'Tech' + str(idx)
 
-    PickingCost = inst.C_alpha.value * inst.alpha_pick.value
-    PickingCost += inst.C_beta.value * sum(inst.beta_pick[t].value for t in inst.TIMES)
+    PickingCost = inst.C_alpha * inst.alpha_pick.value
+    PickingCost += inst.C_beta * sum(inst.beta_pick[t].value for t in inst.TIMES)
 
-    PutawayCost = inst.C_alpha.value * inst.alpha_put.value
-    PutawayCost += inst.C_beta.value * sum(inst.beta_put[t].value for t in inst.TIMES)
+    PutawayCost = inst.C_alpha * inst.alpha_put.value
+    PutawayCost += inst.C_beta * sum(inst.beta_put[t].value for t in inst.TIMES)
 
     MHECost = sum(inst.MHE_Cost[i] for i in inst.PUTAWAY)
 

@@ -1,0 +1,56 @@
+Created WITPdataSet_v2q2s2p2t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+MTest_Y881
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 0.83 seconds
+    MIN COST [Bhanu]: $20,468.48
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 0.86 seconds
+    MIN COST [Bhanu]: $20,639.46
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 0.81 seconds
+    MIN COST [Bhanu]: $20,737.73
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 1.02 seconds
+    MIN COST [Bhanu]: $20,445.31
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 0.89 seconds
+    MIN COST [Bhanu]: $20,141.80
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 0.84 seconds
+    MIN COST [Bhanu]: $21,309.23
+
+set([1, 2])
+[(3, 14), (9, 8), (0, 6), (2, 4), (4, 4), (6, 4), (8, 3), (10, 3), (11, 3)]
+set([3, 4])
+Optimality Gap: 2.00%
+
+Warm Big M Method:
+['i1', 'i2'] ['j3', 'j4']
+WARNING: No construction rule or expression specified for objective 'Total_Cost_Objective'
+WARNING: No construction rule or expression specified for constraint 'BigM_MHE_LOWER'
+WARNING: No construction rule or expression specified for constraint 'ConstraintFour'
+WARNING: No construction rule or expression specified for constraint 'ConstraintFive'
+WARNING: No construction rule or expression specified for constraint 'ConstraintSixPutaway'
+WARNING: No construction rule or expression specified for constraint 'ConstraintSixPicking'
+WARNING: No construction rule or expression specified for constraint 'ConstraintSeven'
+WARNING: No construction rule or expression specified for constraint 'ConstraintEight'
+WARNING: No construction rule or expression specified for constraint 'ConstraintNine'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTenVendor'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTenStore'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTenPrimeVendor'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTenPrimeStore'
+WARNING: No construction rule or expression specified for constraint 'ConstraintEleven'
+WARNING: No construction rule or expression specified for constraint 'ConstraintThirteen'
+WARNING: No construction rule or expression specified for constraint 'ConstraintFourteen'
+WARNING: No construction rule or expression specified for constraint 'ConstraintSixteen'
+WARNING: No construction rule or expression specified for constraint 'ConstraintEighteen'
+WARNING: No construction rule or expression specified for constraint 'ConstraintNineteen'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTwenty'
+WARNING: No construction rule or expression specified for constraint 'ConstraintTwentyOne'

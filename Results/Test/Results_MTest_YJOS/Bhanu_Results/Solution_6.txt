@@ -1,0 +1,128 @@
+Printing New Fashion Solution:
+
+Inbound Fashion Solution (V F T):
+1	1	2	4375
+1	2	2	12280
+
+
+Outbound Fashion Solution(S F T):
+1	1	4	2205
+1	2	4	6005
+2	1	5	2170
+2	2	3	6275
+
+
+Warehouse Fashion Inventory (W F T):
+1	0		4375		4375		2170		0	
+2	0		12280		6005		0		0	
+
+Store Fashion Inventory (S F T):
+Store1
+1	0		0		2205		2205	
+2	0		0		6005		6005	
+Store2
+1	0		0		0		2170	
+2	0		6275		6275		6275	
+
+
+Fashion Shipments from Vendor to Warehouse (V T):
+0	0.8896934	0	0	
+
+Printing New Basic Solution:
+
+Inbound Solution (V P T):
+1	1	1	6737
+1	1	5	2888
+1	2	1	5907
+1	2	5	2532
+
+
+Outbound Solution(S P T):
+1	1	1	4421
+1	2	1	3694
+2	1	2	2559
+2	1	5	2645
+2	2	2	2408
+2	2	5	2337
+
+
+Warehouse Inventory (W P T):
+1	243		2559		0		0		0		243	
+2	195		2408		0		0		0		195	
+
+Store Inventory (S P T):
+Store1
+1	0		3466		2455		1785		678		0	
+2	0		3174		2726		1421		851		0	
+Store2
+1	1892		86		2132		1027		0		1892	
+2	1252		0		1846		1596		71		1252	
+
+
+Shipments from Vendor to Warehouse (V T):
+0.7732207	0	0	0	0.3314506	
+
+Shipments from Warehouse to Stores (S T):
+1	1	0.4967113
+1	4	0.43699
+2	2	0.3033393
+2	3	0.38905
+2	5	0.368274
+
+
+Required Putaway workers (Sol T):
+2	2	0	0	1	
+
+No of required pickers (T):
+3	2	2	3	3	
+
+No of part-time putaway workers (T):
+0	0	0	0	0	
+
+No of part-time pickers (T):
+1	0	0	1	1	
+
+Best Putaway Technology: 1200
+Best Picking Technology: 400
+
+Required Fashion Putaway Hours:
+0	13.87917	0	0	0	
+
+Required Basic Putaway Hours:
+10.53667	0	0	0	4.516667	
+
+Required Total Putaway Hours:
+10.53667	13.87917	0	0	4.516667	
+
+No of required fashion pick hours:
+0	0	15.6875	20.525	5.425	
+
+No of required basic pick hours:
+20.2875	12.4175	0	0	12.455	
+
+No of required total pick hours:
+20.2875	12.4175	15.6875	20.525	17.88	
+
+List of all the costs: 
+MHECost		270
+PutawayTechCost		1060
+PickingTechCost		2055
+WhBasicInvCost		54.05
+BasicInbCost		5191.017
+WhFashionInvCost		292.05
+FashionInbCost		1647.697
+PutawayCost		3200
+StoreBasicInvCost		1322.9
+StoreFashionInvCost		1870.75
+OutboundCost		3310.85
+PickingCost		3920
+Total		24194.31
+
+List of Top5 Technologies: 
+Tech1		2	4	$ 24194.31
+Tech2		2	5	$ 24870.38
+Tech3		2	3	$ 24893.74
+Tech4		2	2	$ 30840.33
+Tech5		2	1	$ 36838.13
+The start time is 12/17/2014 8:02:45 AM
+The End time is 12/17/2014 8:02:46 AM

@@ -1,0 +1,129 @@
+Printing New Fashion Solution:
+
+Inbound Fashion Solution (V F T):
+1	1	2	9910
+1	2	2	16175
+
+
+Outbound Fashion Solution(S F T):
+1	1	3	6215
+1	2	4	6815
+2	1	4	3695
+2	2	5	9360
+
+
+Warehouse Fashion Inventory (W F T):
+1	0		9910		3695		0		0	
+2	0		16175		16175		9360		0	
+
+Store Fashion Inventory (S F T):
+Store1
+1	0		6215		6215		6215	
+2	0		0		6815		6815	
+Store2
+1	0		0		3695		3695	
+2	0		0		0		9360	
+
+
+Fashion Shipments from Vendor to Warehouse (V T):
+0	0.9300234	0	0	
+
+Printing New Basic Solution:
+
+Inbound Solution (V P T):
+1	1	1	11694
+1	2	1	9152
+
+
+Outbound Solution(S P T):
+1	1	1	2183
+1	1	3	2450
+1	1	4	485
+1	2	1	2832
+1	2	3	1519
+1	2	4	910
+2	1	2	6576
+2	2	2	3891
+
+
+Warehouse Inventory (W P T):
+1	0		9511		2935		485		0		0	
+2	0		6320		2429		910		0		0	
+
+Store Inventory (S P T):
+Store1
+1	0		669		0		1017		1017		0	
+2	0		1655		0		732		732		0	
+Store2
+1	970		0		4688		3762		2303		970	
+2	1057		0		3104		2500		1894		1057	
+
+
+Shipments from Vendor to Warehouse (V T):
+0.265744	0	0	0	0	
+
+Shipments from Warehouse to Stores (S T):
+1	1	0.06309067
+1	3	0.2622046
+1	4	0.26727
+2	2	0.134372
+2	4	0.12563
+2	5	0.3432
+
+
+Required Putaway workers (Sol T):
+3	3	0	0	0	
+
+No of required pickers (T):
+2	3	3	3	3	
+
+No of part-time putaway workers (T):
+1	1	0	0	0	
+
+No of part-time pickers (T):
+0	1	1	1	1	
+
+Best Putaway Technology: 1200
+Best Picking Technology: 500
+
+Required Fashion Putaway Hours:
+0	21.7375	0	0	0	
+
+Required Basic Putaway Hours:
+17.37167	0	0	0	0	
+
+Required Total Putaway Hours:
+17.37167	21.7375	0	0	0	
+
+No of required fashion pick hours:
+0	0	12.43	21.02	18.72	
+
+No of required basic pick hours:
+10.03	20.934	7.938	2.79	0	
+
+No of required total pick hours:
+10.03	20.934	20.368	23.81	18.72	
+
+List of all the costs: 
+MHECost		324
+PutawayTechCost		1060
+PickingTechCost		3195
+WhBasicInvCost		225.9
+BasicInbCost		1262.396
+WhFashionInvCost		553.15
+FashionInbCost		1253.435
+PutawayCost		3680
+StoreBasicInvCost		1305
+StoreFashionInvCost		2451.25
+OutboundCost		4080.363
+PickingCost		4160
+Total		23550.49
+
+List of Top5 Technologies: 
+Tech1		2	5	$ 23550.49
+Tech2		2	3	$ 27597.18
+Tech3		2	1	$ 39840.38
+Tech4		1	1	$ 54762
+Tech5		None	None	$ -
+The start time is 12/17/2014 8:03:41 AM
+The End time is 12/17/2014 8:03:42 AM

@@ -2,7 +2,6 @@ from Function_Module import *
 from BigMModel import solve_big_m_model
 import time
 
-global_gap = .02
 
 def tech_idx(tup):
     i, j = tup
@@ -22,7 +21,7 @@ def Bhanu_code():
     return S
 
 @Timer
-def Hybrid_code(cpath, N, GG=None):
+def Hybrid_code(cpath, N, GG=.02):
     T1 = time.time()
     BS, BT = [], []
     count, k, gap = {}, 1, 0
@@ -87,13 +86,7 @@ def Hybrid_code(cpath, N, GG=None):
     print L
     print bj
 
-    # print indices
-    global global_gap
-    #global_gap = GG
-
-    #GG = stdev(BS) * 10 / mean(BS) if GG is None else GG
-    #global_gap = round(min([(GG if GG < 1 else GG/100.), GG_min]), 4)
-    qprint('Optimality Gap: {:.2%}'.format(global_gap))
+    qprint('Optimality Gap: {:.2%}'.format(GG))
     print
 
     qprint("Warm Big M Method:")
@@ -103,20 +96,20 @@ def Hybrid_code(cpath, N, GG=None):
 
     HS, HT = solve_big_m_model(PUTAWAY=list(bi), PICKING=list(bj),
                                time_limit=BIG_M_TIMEOUT - (time.time() - T1),
-                               gap=global_gap)
+                               gap=GG)
 
     cp('bigm_output.txt', '{}/'.format(Instance_path))
     cp('Pickled_Data', '{}/'.format(Instance_path))
     return BS, BT, HS
 
 @Timer
-def BM_wrapper(cpath):
+def BM_wrapper(cpath, GG=.02):
     qprint("Big M Benchmark:")
 
     Instance_path = path(cpath,'BigM_Benchmark')
     mkpath(Instance_path)
 
-    PS, PT = solve_big_m_model(gap=global_gap, time_limit=BIG_M_TIMEOUT)
+    PS, PT = solve_big_m_model(gap=GG, time_limit=BIG_M_TIMEOUT)
 
     cp('bigm_output.txt', '{}/'.format(Instance_path))
     cp('Pickled_Data', '{}/'.format(Instance_path))

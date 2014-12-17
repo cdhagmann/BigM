@@ -1,0 +1,96 @@
+Results from Tech10
+Putaway Technology: 1200.0
+Picking Technology: 500.0
+
+Full-Time Putaway workers: 2.0
+Full-Time Picking workers: 2.0
+
+Cost Breakdown:
+	MHECost              $270.00
+	PutawayTechCost      $1,060.00
+	PickingTechCost      $3,195.00
+	WhBasicInvCost       $110.35
+	BasicInbCost         $2,301.09
+	WhFashionInvCost     $301.25
+	FashionInbCost       $2,313.34
+	PutawayCost          $3,200.00
+	StoreBasicInvCost    $1,509.70
+	StoreFashionInvCost  $1,319.75
+	OutboundCost         $7,083.83
+	PickingCost          $3,920.00
+	Total                $26,584.30
+
+
+Printing New Fashion Solution:
+
+Inbound Fashion Solution
+1 	1 	3 	9260
+1 	2 	3 	9580
+
+Outbound Solution
+1 	1 	4 	3055
+1 	2 	4 	4500
+2 	1 	5 	6205
+2 	2 	5 	5080
+
+Store Inventory
+Store1
+1 0          0          0          3055       3055      
+1 0          0          0          4500       4500      
+Store2
+1 0          0          0          0          6205      
+1 0          0          0          0          5080      
+
+Shipments from (Basic) Vendor to Warehouse
+0          0          1          0          0         
+
+Printing New Basic Solution:
+
+
+Inbound Solution
+1 	1 	1 	3041
+1 	1 	2 	8763
+1 	1 	3 	0
+1 	1 	4 	0
+1 	1 	5 	0
+1 	2 	1 	3739
+1 	2 	2 	7848
+1 	2 	3 	0
+1 	2 	4 	0
+1 	2 	5 	0
+
+Outbound Solution
+Store1
+1 3041       0          0          2856       0         
+2 3739       0          0          1589       0         
+Store2
+1 0          5907       0          0          0         
+2 0          5544       0          0          715       
+
+Warehouse Inventory
+1 0          2856       2856       0          0         
+2 0          2304       2304       715        0         
+
+Store Inventory
+Store1
+1 2514       1502       0          1041       0         
+2 2574       1299       144        496        0         
+Store2
+1 0          3771       2138       1654       739       
+2 0          5437       3709       1922       1254      
+
+Shipments from (Basic) Vendor to Warehouse
+1          1          0          0          0         
+
+Shipments from (Fashion) Vendor to Warehouse
+0          0          1          0          0         
+
+Shipments from Warehouse to Stores
+1 1          0          0          1          0         
+2 0          1          0          0          1         
+
+No of part-time putaway workers:
+0          0          0          0          0         
+
+No of part-time picking workers:
+0          1          0          1          1         

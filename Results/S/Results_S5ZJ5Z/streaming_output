@@ -1,0 +1,44 @@
+Created WITPdataSet_v2q10s5p10t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+S5ZJ5Z
+0.02
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 5.34 seconds
+    MIN COST [Bhanu]: $47,732.20
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 4.04 seconds
+    MIN COST [Bhanu]: $50,880.40
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 6.25 seconds
+    MIN COST [Bhanu]: $48,572.19
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 5.24 seconds
+    MIN COST [Bhanu]: $47,085.46
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 6.81 seconds
+    MIN COST [Bhanu]: $48,692.95
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 8.18 seconds
+    MIN COST [Bhanu]: $47,286.95
+
+set([2, 3])
+[(10, 21), (9, 13), (21, 6), (6, 5), (8, 5), (16, 5), (18, 4), (22, 4), (0, 3), (4, 3), (11, 3), (3, 2), (19, 2)]
+set([4, 5])
+Optimality Gap: 2.00%
+
+Warm Big M Method:
+['i2', 'i3'] ['j4', 'j5']
+	Selected Tech10: $41,818.03 [2.00%] (29m 36.69s (1776.69 seconds))
+
+Big M Benchmark:
+['i1', 'i2', 'i3', 'i4', 'i5', 'i6'] ['j1', 'j2', 'j3', 'j4', 'j5', 'j6']
+ERROR: Rule failed when generating expression for constraint BigM_MHE_LOWER with index i1:
+	AttributeError: 'NoneType' object has no attribute 'cname'
+ERROR: Constructing component 'BigM_MHE_LOWER' from data=None failed:
+	AttributeError: 'NoneType' object has no attribute 'cname'

@@ -1,0 +1,35 @@
+Created WITPdataSet_v2q2s2p2t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+TestXXDE9
+0
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 1.25 seconds
+    MIN COST [Bhanu]: $24,377.96
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 1.32 seconds
+    MIN COST [Bhanu]: $24,224.53
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 0.93 seconds
+    MIN COST [Bhanu]: $24,609.15
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 1.04 seconds
+    MIN COST [Bhanu]: $24,224.53
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 0.95 seconds
+    MIN COST [Bhanu]: $24,772.27
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 0.93 seconds
+    MIN COST [Bhanu]: $24,224.53
+
+set([2])
+[(9, 18), (10, 11), (4, 10), (3, 7), (0, 4), (1, 4), (11, 4), (2, 3), (6, 2)]
+set([4, 5])
+Optimality Gap: 0.00%
+
+Warm Big M Method:

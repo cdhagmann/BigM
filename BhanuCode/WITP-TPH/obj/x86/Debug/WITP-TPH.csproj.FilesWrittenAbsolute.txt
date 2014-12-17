@@ -51,3 +51,8 @@
 /home/cdhagmann/Desktop/BigM/BhanuCode/WITP-TPH/bin/Debug/WITP-TPH.exe
 /home/cdhagmann/Desktop/BigM/BhanuCode/WITP-TPH/obj/x86/Debug/WITP-TPH.exe
 /home/cdhagmann/Desktop/BigM/BhanuCode/WITP-TPH/obj/x86/Debug/WITP-TPH.exe.mdb
+/home/cdhagmann/Documents/BigM/BhanuCode/WITP-TPH/obj/x86/Debug/.NETFramework,Version=v4.0,Profile=Client.AssemblyAttribute.cs
+/home/cdhagmann/Documents/BigM/BhanuCode/WITP-TPH/bin/Debug/WITP-TPH.exe.mdb
+/home/cdhagmann/Documents/BigM/BhanuCode/WITP-TPH/bin/Debug/WITP-TPH.exe
+/home/cdhagmann/Documents/BigM/BhanuCode/WITP-TPH/obj/x86/Debug/WITP-TPH.exe
+/home/cdhagmann/Documents/BigM/BhanuCode/WITP-TPH/obj/x86/Debug/WITP-TPH.exe.mdb

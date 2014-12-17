@@ -3,26 +3,24 @@ from BMaster_code import *
 import sys
 
 
+GAP = {'Test': 0,
+       'S': .02,
+       'P': .15,
+       'M': .30,
+       'L': .45}
+
 def main(cpath, Type, N=6):
     overview = path(cpath,'Overview.txt')
 
     Pyomo_code = True
-    if Type in ('S', 'Test'):
-        GG = .02
-        pyomo_code = True
-    elif Type == 'M':
-        GG = .15
-    elif Type == 'L':
-        GG = .30
-    else:
-        GG = None
-        pyomo_code = True
+    GG = GAP.get(Type, .5)
 
+    print GG
 
     (BS, BT, HS), HT = Hybrid_code(cpath, N=N, GG=GG)
     print
     if Pyomo_code:
-        PS, PT = BM_wrapper(cpath)
+        PS, PT = BM_wrapper(cpath, GG=GG)
 
     print line('#',10)
     tee_print(overview,'RESULTS [Bhanu]: ',t=0, n=0)
@@ -78,9 +76,9 @@ if '__main__' == __name__:
     except IndexError:
         Type = 'Misc'
 
-    ID = 'M' + Type + '_' + id_generator(size=4)
+    ID = Type + id_generator(size=5)
 
-    if Type in ('S','M','L', 'Test'):
+    if Type in GAP:
         cpath = 'Results/{}/Results_{}'.format(Type, ID)
     else:
         cpath = 'Results/{}/Results_{}'.format('Misc', ID)

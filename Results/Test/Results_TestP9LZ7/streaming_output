@@ -1,0 +1,31 @@
+Created WITPdataSet_v2q2s2p2t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+TestP9LZ7
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 0.96 seconds
+    MIN COST [Bhanu]: $22,271.56
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 1.05 seconds
+    MIN COST [Bhanu]: $21,505.54
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 1.03 seconds
+    MIN COST [Bhanu]: $21,383.27
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 0.75 seconds
+    MIN COST [Bhanu]: $22,676.23
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 1.48 seconds
+    MIN COST [Bhanu]: $21,385.54
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 0.92 seconds
+    MIN COST [Bhanu]: $21,241.99
+
+set([2])
+[(9, 22), (3, 10), (2, 9), (4, 9), (10, 8), (0, 5), (5, 4), (8, 3), (1, 1)]
+set([4, 5])

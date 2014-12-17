@@ -715,9 +715,8 @@ def big_M_output(inst):
 
 
 if __name__ == '__main__':
-
-    instance, T = solve_big_m_model(PUTAWAY=(2,), PICKING=(4,5), gap=.02)
+    instance, T = solve_big_m_model(gap=.2)
     print ptime(T)
 
-    instance, T = solve_big_m_model(gap=.02, time_limit=10)
+    instance, T = solve_big_m_model(gap=.2)
     print ptime(T)

@@ -1,0 +1,35 @@
+RESULTS [Bhanu]: 
+    MEAN:  4.19 seconds
+    STDEV: 0.30 seconds
+    MIN:   3.71 seconds
+    MAX:   4.52 seconds
+
+    MEAN:  $50,799.07
+    STDEV: $1,415.32
+    ERROR: 2.79%
+    MIN:   $49,470.64
+    MAX:   $53,192.70
+
+
+RESULTS [Bhanu]: 
+    TIME:  25.17 seconds
+    OBJ:  $49,470.64
+
+RESULTS [Hybrid]: 
+    TIME:  162.83 seconds
+    OBJ:  $43,990.94
+
+RESULTS [Pyomo]: 
+    TIME:  284.02 seconds
+    OBJ:  $43,983.24
+
+
+COMPARISON [Bhanu vs Hybrid]: 
+    ERROR: 12.46%
+    SPEEDUP: 5.47
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: 0.02%
+    SPEEDUP: 0.74
+
+

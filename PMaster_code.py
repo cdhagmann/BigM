@@ -82,7 +82,7 @@ def PBhanu(cpath, N):
         p = mp.Process(target=PB_func, args=(Instance_path, k, N))
         processes.append(p)
     
-    M = mp.cpu_count()
+    M = max([mp.cpu_count()-1, 2])
     for proc in (processes[i:i+M] for i in range(0, N, M)):    
         for p in proc:
             p.start()

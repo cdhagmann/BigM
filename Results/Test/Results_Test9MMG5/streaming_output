@@ -1,0 +1,99 @@
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+Created WITPdataSet_v2q2s2p2t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+Test9MMG5
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 1.39 seconds
+    MIN COST [Bhanu]: $25,377.61
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 1.61 seconds
+    MIN COST [Bhanu]: $25,381.11
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 1.56 seconds
+    MIN COST [Bhanu]: $25,407.84
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 1.57 seconds
+    MIN COST [Bhanu]: $25,366.36
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 1.73 seconds
+    MIN COST [Bhanu]: $25,057.96
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 1.62 seconds
+    MIN COST [Bhanu]: $25,666.16
+
+RESULTS [Bhanu]: 
+    TIME:  2.01 seconds
+    OBJ:  $25,057.96
+
+Optimality Gap: 0.00%
+Warm Big M Method:
+['i1', 'i2'] ['j4', 'j5']
+	Selected Tech3 : $23,098.69 [0.00%] (1.38 seconds)
+
+Big M Benchmark:
+	Selected Tech3 : $23,098.69 [0.00%] (1.76 seconds)
+##########
+RESULTS [Bhanu]: 
+    TIME:  2.01 seconds
+    OBJ:  $25,057.96
+
+RESULTS [Hybrid]: 
+    TIME:  3.40 seconds
+    OBJ:  $23,098.69
+
+RESULTS [Pyomo]: 
+    TIME:  1.77 seconds
+    OBJ:  $23,098.69
+
+
+COMPARISON [Hybrid vs Bhanu]: 
+    ERROR: 8.48%
+    SPEEDUP: 0.59
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: -0.00%
+    SPEEDUP: 0.52
+
+
+##########
+
+PTJAWB
+0.15
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 48.26 seconds
+    MIN COST [Bhanu]: $104,151.10
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 33.70 seconds
+    MIN COST [Bhanu]: $98,839.84
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 34.52 seconds
+    MIN COST [Bhanu]: $96,271.09
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 30.80 seconds
+    MIN COST [Bhanu]: $100,693.60
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 1.16 seconds
+    MIN COST [Bhanu]: $27,541.92
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 1.23 seconds
+    MIN COST [Bhanu]: $26,026.27
+
+set([2, 3, 4])
+[(17, 13), (23, 9), (9, 8), (10, 8), (29, 5), (0, 4), (3, 4), (11, 4), (4, 3), (8, 3), (14, 3), (24, 3), (6, 2), (12, 2)]
+set([4, 5, 6])
+Optimality Gap: 15.00%
+
+Warm Big M Method:

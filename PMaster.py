@@ -9,7 +9,7 @@ GAP = {'Test': 0,
        'M': .30,
        'L': .45}
 
-def main(cpath, Type, N=6):
+def main(cpath, Type, N=7):
     overview = path(cpath,'Overview.txt')
 
     Pyomo_code = True

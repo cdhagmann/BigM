@@ -1,0 +1,36 @@
+Created WITPdataSet_v10q250s25p250t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+MMD9U4
+0.3
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 9m 24.79s (564.79 seconds)
+    MIN COST [Bhanu]: $201,786.10
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 7m 36.34s (456.34 seconds)
+    MIN COST [Bhanu]: $203,505.50
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 5m 56.97s (356.97 seconds)
+    MIN COST [Bhanu]: $203,795.50
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 6m 58.16s (418.16 seconds)
+    MIN COST [Bhanu]: $202,864.80
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 7m 27.38s (447.38 seconds)
+    MIN COST [Bhanu]: $216,041.00
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 6m 58.25s (418.25 seconds)
+    MIN COST [Bhanu]: $201,773.60
+
+set([3, 4])
+[(23, 24), (17, 18), (29, 7), (11, 6), (22, 6), (18, 5), (21, 5), (12, 4), (35, 3), (16, 3), (19, 3), (0, 2), (24, 2), (27, 2)]
+set([6])
+Optimality Gap: 30.00%
+
+Warm Big M Method:
+['i3', 'i4'] ['j6']

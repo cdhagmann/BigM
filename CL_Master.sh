@@ -2,6 +2,9 @@ case "$1" in
     "S")
         python junk.py 5 2 10 10 5 | tee -a streaming_output
         ;;
+    "P")
+        python junk.py 10 5 50 50 5 | tee -a streaming_output
+        ;;
     "M")
         python junk.py 25 10 250 250 5 | tee -a streaming_output
         ;;     

@@ -1,8 +1,7 @@
-./CL_PMaster.sh M
-
 for i in {1..10}
 do
     ./CL_PMaster.sh S
+done
 
 for i in {1..10}
 do

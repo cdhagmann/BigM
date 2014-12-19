@@ -75,4 +75,5 @@ if '__main__' == __name__:
         rm('*WITP*')
         rm('*cs')
         rm('Pickled_Data')
+        rm('*.txt')
         prune_results_folder()

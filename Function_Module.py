@@ -184,7 +184,7 @@ def cd(path):
 
 def prune_results_folder():
     for archive in glob.iglob('Results/*/*'):
-        if not os.path.isfile(bar + '/Overview.txt'):
+        if not os.path.isfile(archive + '/Overview.txt'):
             bash_command('rm -r {}'.format(archive)) 
 
 

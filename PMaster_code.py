@@ -7,13 +7,6 @@ from contextlib import contextmanager
 
 BIG_M_TIMEOUT = 12 * 60 * 60
 
-@contextmanager
-def cd(path):
-    saved_path = os.getcwd()
-    os.chdir(path)
-    yield
-    os.chdir(saved_path)
-
 
 def brief_pause(N):
     time.sleep((.1 + random.random()) / N)

@@ -174,8 +174,18 @@ def mv(src, dst):
         cp(f, dst)
         rm(f)
 
+@contextmanager
+def cd(path):
+    saved_path = os.getcwd()
+    os.chdir(path)
+    yield
+    os.chdir(saved_path)
 
 
+def prune_results_folder():
+    for archive in glob.iglob('Results/*/*'):
+        if not os.path.isfile(bar + '/Overview.txt'):
+            bash_command('rm -r {}'.format(archive)) 
 
 
 

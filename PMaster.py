@@ -67,9 +67,12 @@ if '__main__' == __name__:
     overview = path(cpath,'Overview.txt')
 
     print ID
-    main(cpath, Type)
-    rm('*.pyc')
-    rm('*.log')
-    rm('*WITP*')
-    rm('*cs')
-    rm('Pickled_Data')
+    try:
+        main(cpath, Type)
+    finally:
+        rm('*.pyc')
+        rm('*.log')
+        rm('*WITP*')
+        rm('*cs')
+        rm('Pickled_Data')
+        prune_results_folder()

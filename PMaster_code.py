@@ -104,9 +104,9 @@ def Hybrid_code(cpath, N, GG=.02):
     bi, bj = PBhanu(cpath, N)
     BTT = time.time() - T1
     
-    print ptime(BTT)
-    print bi
-    print bj
+    #print ptime(BTT)
+    #print bi
+    #print bj
 
     with open('{}/Bhanu_Results/Data.csv'.format(cpath), 'rb') as f:
         my_csv = csv.reader(f)

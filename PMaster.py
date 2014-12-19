@@ -15,9 +15,9 @@ def main(cpath, Type, N=6):
     Pyomo_code = True
     GG = GAP.get(Type, .5)
 
-    print GG
+    #print GG
 
-    (BS, BT, HS), HT = Hybrid_code(cpath, N=N, GG=GG)
+    BS, BT, HS, HT = Hybrid_code(cpath, N=N, GG=GG)
     print
 
     PS, PT = BM_wrapper(cpath, GG=GG)

@@ -29,8 +29,7 @@ def PB_func(cpath, k, N):
         temp_file = '../Solution_{}.txt'.format(ID)
         mv('*Sol*', temp_file)
     
-    rm(Instance_path)
-        
+    rm(Instance_path)   
     Last_line = output[-1]
     assert 'minimum cost' in Last_line
 
@@ -117,5 +116,5 @@ def Hybrid_code(cpath, N, GG=.02):
     #for s in BS: print curr(s)
     
 if __name__ == '__main__':
-    Hybrid_code('Results/Test/Results_T12345', 6)
+    Hybrid_code('Results/Test/Results_T12345', 100)
         

@@ -1,123 +1,127 @@
 Printing New Fashion Solution:
 
 Inbound Fashion Solution (V F T):
-1	1	3	5405
-1	2	3	11615
+1	1	2	5405
+1	2	2	11615
 
 
 Outbound Fashion Solution(S F T):
-1	1	5	4510
-1	2	5	8175
+1	1	3	4510
+1	2	4	8175
 2	1	4	895
-2	2	4	3440
+2	2	5	3440
 
 
 Warehouse Fashion Inventory (W F T):
-1	0		0		5405		4510		0	
-2	0		0		11615		8175		0	
+1	0		5405		895		0		0	
+2	0		11615		11615		3440		0	
 
 Store Fashion Inventory (S F T):
 Store1
-1	0		0		0		4510	
-2	0		0		0		8175	
+1	0		4510		4510		4510	
+2	0		0		8175		8175	
 Store2
 1	0		0		895		895	
-2	0		0		3440		3440	
+2	0		0		0		3440	
 
 
 Fashion Shipments from Vendor to Warehouse (V T):
-0	0	0.6239133	0	
+0	0.6239133	0	0	
 
 Printing New Basic Solution:
 
 Inbound Solution (V P T):
-1	1	1	10792
-1	2	1	12695
+1	1	5	10792
+1	2	5	12695
 
 
 Outbound Solution(S P T):
 1	1	1	5491
 1	2	1	6225
-2	1	3	5301
-2	2	3	6470
+2	1	2	1840
+2	1	5	3461
+2	2	2	2117
+2	2	5	4353
 
 
 Warehouse Inventory (W P T):
-1	0		5301		5301		0		0		0	
-2	0		6470		6470		0		0		0	
+1	7331		1840		0		0		0		7331	
+2	8342		2117		0		0		0		8342	
 
 Store Inventory (S P T):
 Store1
 1	0		4768		3403		2302		434		0	
 2	0		4670		3431		2307		991		0	
 Store2
-1	1350		895		0		3530		2585		1350	
-2	2256		727		0		5003		3613		2256	
+1	2226		1771		2716		945		0		2226	
+2	2996		1467		2857		1390		0		2996	
 
 
 Shipments from Vendor to Warehouse (V T):
-0.7816647	0	0	0	0	
+0	0	0	0	0.7816647	
 
 Shipments from Warehouse to Stores (S T):
 1	1	0.3953707
-1	5	0.4720667
-2	3	0.386294
-2	4	0.1518467
+1	3	0.2104667
+1	4	0.2616
+2	2	0.1327967
+2	4	0.04176667
+2	5	0.3635773
 
 
 Required Putaway workers (Sol T):
-3	0	2	0	0	
+0	2	0	0	3	
 
 No of required pickers (T):
-4	0	4	2	4	
+3	1	2	3	3	
 
 No of part-time putaway workers (T):
-1	0	0	0	0	
+0	0	0	0	1	
 
 No of part-time pickers (T):
-1	0	1	0	1	
+1	0	0	1	1	
 
 Best Putaway Technology: 1200
-Best Picking Technology: 400
+Best Picking Technology: 500
 
 Required Fashion Putaway Hours:
-0	0	14.18333	0	0	
+0	14.18333	0	0	0	
 
 Required Basic Putaway Hours:
-19.5725	0	0	0	0	
+0	0	0	0	19.5725	
 
 Required Total Putaway Hours:
-19.5725	0	14.18333	0	0	
+0	14.18333	0	0	19.5725	
 
 No of required fashion pick hours:
-0	0	0	10.8375	31.7125	
+0	0	9.02	18.14	6.88	
 
 No of required basic pick hours:
-29.29	0	29.4275	0	0	
+23.432	7.914	0	0	15.628	
 
 No of required total pick hours:
-29.29	0	29.4275	10.8375	31.7125	
+23.432	7.914	9.02	18.14	22.508	
 
 List of all the costs: 
 MHECost		297
 PutawayTechCost		1060
-PickingTechCost		2055
-WhBasicInvCost		235.42
+PickingTechCost		3195
+WhBasicInvCost		196.3
 BasicInbCost		2369.163
-WhFashionInvCost		297.05
+WhFashionInvCost		329.7
 FashionInbCost		1764.613
 PutawayCost		3440
-StoreBasicInvCost		2113.25
-StoreFashionInvCost		1067.75
-OutboundCost		3300.07
-PickingCost		5520
-Total		23519.32
+StoreBasicInvCost		1933.7
+StoreFashionInvCost		1755.5
+OutboundCost		4535.36
+PickingCost		3920
+Total		24796.34
 
 List of Top5 Technologies: 
-Tech1		2	4	$ 23519.32
-Tech2		2	5	$ 23889
-Tech3		1	5	$ 25501.66
-Tech4		1	2	$ 31183.8
-Tech5		1	1	$ 41493.8
-The start time is 12/19/2014 10:53:25 AM
-The End time is 12/19/2014 10:53:28 AM
+Tech1		2	5	$ 24796.34
+Tech2		2	3	$ 27718.11
+Tech3		2	1	$ 38075.91
+Tech4		1	1	$ 46870.88
+Tech5		None	None	$ -
+The start time is 12/19/2014 9:39:06 AM
+The End time is 12/19/2014 9:39:08 AM

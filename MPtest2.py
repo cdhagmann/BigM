@@ -1,11 +1,8 @@
 from Function_Module import *
 import time, os, glob, csv, random
 import multiprocessing as mp
-from BigMModel import solve_big_m_model
+
 from contextlib import contextmanager
-
-
-BIG_M_TIMEOUT = 12 * 60 * 60
 
 @contextmanager
 def cd(path):
@@ -13,7 +10,6 @@ def cd(path):
     os.chdir(path)
     yield
     os.chdir(saved_path)
-
 
 def brief_pause(N):
     time.sleep((.1 + random.random()) / N)
@@ -115,61 +111,26 @@ def PBhanu(cpath, N):
     return sorted(tuple(bi)), sorted(tuple(bj))    
 
 
+
 def Hybrid_code(cpath, N, GG=.02):
     T1 = time.time()
     bi, bj = PBhanu(cpath, N)
     BTT = time.time() - T1
-    
-    #print ptime(BTT)
-    #print bi
-    #print bj
+
+    print bi
+    print bj
 
     with open('{}/Bhanu_Results/Data.csv'.format(cpath), 'rb') as f:
         my_csv = csv.reader(f)
         BS, BT = [map(float, l) for l in zip(*my_csv)]
         
+    print
     qprint('RESULTS [Bhanu]: ',t=0, n=0)
     qprint('TIME:  {0:.2f} seconds'.format(BTT),t=1, n=0)
     qprint('OBJ:  ' + curr(min(BS)),t=1, n=1)
     
-    qprint('Optimality Gap: {:.2%}'.format(GG))
+    #for s in BS: print curr(s)
     
-    qprint("Warm Big M Method:")
-
-    Instance_path = path(cpath,'WBM_Method')
-    mkpath(Instance_path)
-
-    HS, HT = solve_big_m_model(PUTAWAY=list(bi), PICKING=list(bj),
-                               time_limit=BIG_M_TIMEOUT - BTT,
-                               gap=GG)
-
-    cp('bigm_output.txt', '{}/'.format(Instance_path))
-    cp('Pickled_Data', '{}/'.format(Instance_path))
-    return min(BS), BTT, HS, time.time() - T1
-
-
-@Timer
-def BM_wrapper(cpath, GG=.02):
-    qprint("Big M Benchmark:")
-
-    Instance_path = path(cpath,'BigM_Benchmark')
-    mkpath(Instance_path)
-
-    PS, PT = solve_big_m_model(gap=GG, time_limit=BIG_M_TIMEOUT)
-
-    cp('bigm_output.txt', '{}/'.format(Instance_path))
-    cp('Pickled_Data', '{}/'.format(Instance_path))
-
-    return PS
-
-
-if '__main__' == __name__:
-    ID = 'C' + id_generator(size=5)
-    foldername = 'Results_' + ID
-    overview = path(foldername,'Overview.txt')
-    cpath = path(foldername,'Case_1')
-    print ID
-    (BS, BT, HS), HT = Hybrid_code(cpath, N=6)
-    print ptime(HT)
-    PS, PT = BM_wrapper(cpath)
-    print ptime(PT)        
+if __name__ == '__main__':
+    Hybrid_code('Results/Test/Results_T12345', 6)
+        

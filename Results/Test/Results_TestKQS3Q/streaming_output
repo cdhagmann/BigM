@@ -1,0 +1,114 @@
+Created WITPdataSet_v10q250s25p250t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+MMD9U4
+0.3
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 9m 24.79s (564.79 seconds)
+    MIN COST [Bhanu]: $201,786.10
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 7m 36.34s (456.34 seconds)
+    MIN COST [Bhanu]: $203,505.50
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 5m 56.97s (356.97 seconds)
+    MIN COST [Bhanu]: $203,795.50
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 6m 58.16s (418.16 seconds)
+    MIN COST [Bhanu]: $202,864.80
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 7m 27.38s (447.38 seconds)
+    MIN COST [Bhanu]: $216,041.00
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 6m 58.25s (418.25 seconds)
+    MIN COST [Bhanu]: $201,773.60
+
+set([3, 4])
+[(23, 24), (17, 18), (29, 7), (11, 6), (22, 6), (18, 5), (21, 5), (12, 4), (35, 3), (16, 3), (19, 3), (0, 2), (24, 2), (27, 2)]
+set([6])
+Optimality Gap: 30.00%
+
+Warm Big M Method:
+['i3', 'i4'] ['j6']
+Created WITPdataSet_v2q2s2p2t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+TestKQS3Q
+0
+Instance 1 of 6:
+    RUN TIME [Bhanu]: 2.81 seconds
+    MIN COST [Bhanu]: $27,613.30
+
+Instance 2 of 6:
+    RUN TIME [Bhanu]: 1.39 seconds
+    MIN COST [Bhanu]: $28,468.71
+
+Instance 3 of 6:
+    RUN TIME [Bhanu]: 1.90 seconds
+    MIN COST [Bhanu]: $29,223.35
+
+Instance 4 of 6:
+    RUN TIME [Bhanu]: 3.32 seconds
+    MIN COST [Bhanu]: $27,051.16
+
+Instance 5 of 6:
+    RUN TIME [Bhanu]: 2.89 seconds
+    MIN COST [Bhanu]: $27,220.53
+
+Instance 6 of 6:
+    RUN TIME [Bhanu]: 2.70 seconds
+    MIN COST [Bhanu]: $26,820.32
+
+set([1, 2])
+[(9, 19), (10, 16), (4, 12), (8, 8), (3, 6), (2, 5), (6, 3), (0, 2), (1, 2), (16, 2), (7, 1)]
+set([3, 4, 5])
+Optimality Gap: 0.00%
+
+Warm Big M Method:
+['i1', 'i2'] ['j3', 'j4', 'j5']
+	Selected Tech10: $26,048.82 [0.00%] (3.86 seconds)
+
+Big M Benchmark:
+	Selected Tech10: $26,048.82 [0.00%] (2.92 seconds)
+##########
+RESULTS [Bhanu]: 
+    MEAN:  2.50 seconds
+    STDEV: 0.65 seconds
+    MIN:   1.39 seconds
+    MAX:   3.32 seconds
+
+    MEAN:  $27,732.90
+    STDEV: $850.22
+    ERROR: 3.07%
+    MIN:   $26,820.32
+    MAX:   $29,223.35
+
+
+RESULTS [Bhanu]: 
+    TIME:  15.02 seconds
+    OBJ:  $26,820.32
+
+RESULTS [Hybrid]: 
+    TIME:  18.99 seconds
+    OBJ:  $26,048.82
+
+RESULTS [Pyomo]: 
+    TIME:  2.95 seconds
+    OBJ:  $26,048.82
+
+
+COMPARISON [Bhanu vs Hybrid]: 
+    ERROR: 2.96%
+    SPEEDUP: 0.26
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: -0.00%
+    SPEEDUP: -0.84
+
+
+##########
+

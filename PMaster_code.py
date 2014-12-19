@@ -99,7 +99,6 @@ def PBhanu(cpath, N):
     return sorted(tuple(bi)), sorted(tuple(bj))    
 
 
-
 def Hybrid_code(cpath, N, GG=.02):
     T1 = time.time()
     bi, bj = PBhanu(cpath, N)

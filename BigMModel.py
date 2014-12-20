@@ -485,7 +485,6 @@ def solve_big_m_model(solver='gurobi', time_limit=None, gap=None, output=True,
 
     status = results['Solver'][0]['Termination condition'].key
 
-    transformed_results = instance.update_results(results)
     BMT = time.time() - T1
     if status == 'optimal':
         instance.load(results)
@@ -506,22 +505,40 @@ def solve_big_m_model(solver='gurobi', time_limit=None, gap=None, output=True,
         tech = 'Tech' + str(idx)
         info = (tech, curr(obj), err/100., ptime(BMT))
         print "\tSelected {0:6}: {1} [{2:.2%}] ({3})".format(*info)
-        if output:
-            big_M_output(instance)
+        big_M_output(instance)
         rm('temp.log')
+    elif status == 'maxTimeLimit':
+        transformed_results = instance.update_results(results)
+        instance.load(transformed_results)
+
+        for t in instance.theta_put:
+            if instance.theta_put[t].value == 1:
+                i = t
+
+
+        for t in instance.theta_pick:
+            if instance.theta_pick[t].value == 1:
+                j = t
+
+        line = bash_command('tail -1 temp.log')[0]
+        obj = float(line.split()[2].strip(','))
+        err = float(line.split()[-1].strip('%'))
+
+        idx = tech_idx((num_strip(i), num_strip(j)))
+        tech = 'Tech' + str(idx)
+        info = (tech, curr(obj), err/100., ptime(BMT))
+        print "\tSelected* {0:6}: {1} [{2:.2%}] ({3})".format(*info)
+        big_M_output(instance)
+        rm('temp.log')        
     else:
         with open('bigm_output.txt', 'wb') as f:
+            transformed_results = instance.update_results(results)
             if status == 'infeasible':
                 obj = 'Infeasible'
                 print obj
             elif status == 'minFunctionValue':
                 obj =  'Cutoff Error'
                 print obj
-            elif status == 'maxTimeLimit':
-                line = bash_command('tail -1 temp.log')[0]
-                obj = float(line.split()[2].strip(','))
-                err = float(line.split()[-1].strip('%'))
-                print '{} [{}%]'.format(curr(obj), err)
             else:
                 print 'Unknown Status: ' + status
 

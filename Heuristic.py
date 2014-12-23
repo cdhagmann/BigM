@@ -19,7 +19,9 @@ if '__main__' == __name__:
 
     print ID
     try:
-        PBhanu(cpath, 7)
+        with open(overview, 'w') as f:
+            with Redirect(f, f):
+                PBhanu(cpath, 7)
     finally:
         rm('*.pyc')
         rm('*.log')

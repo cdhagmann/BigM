@@ -61,7 +61,8 @@ def PB_func(cpath, kp, N):
     return S, T
      
      
-def PBhanu(cpath, N):    
+def PBhanu(cpath, N):
+    T1 = time.time()    
     BS, BT = [], []
     bi, bj = set(), set()
     
@@ -105,26 +106,19 @@ def PBhanu(cpath, N):
     f2 = '{}/Best_Solution.txt'.format(Instance_path)
     cp(f1, f2)
     
-    return sorted(tuple(bi)), sorted(tuple(bj))    
-
-
-def Hybrid_code(cpath, N, GG=.02):
-    T1 = time.time()
-    bi, bj = PBhanu(cpath, N)
     BTT = time.time() - T1
-    
-    #print ptime(BTT)
-    #print bi
-    #print bj
-
-    with open('{}/Bhanu_Results/Data.csv'.format(cpath), 'rb') as f:
-        my_csv = csv.reader(f)
-        BS, BT = [map(float, l) for l in zip(*my_csv)]
         
     qprint('RESULTS [Bhanu]: ',t=0, n=0)
     qprint('TIME:  {0:.2f} seconds'.format(BTT),t=1, n=0)
     qprint('OBJ:  ' + curr(min(BS)),t=1, n=1)
-    
+     
+    return min(BS), BTT, sorted(tuple(bi)), sorted(tuple(bj))    
+
+
+def Hybrid_code(cpath, N, GG=.02):
+    T1 = time.time()
+    BS, BTT, bi, bj = PBhanu(cpath, N)
+        
     qprint('Optimality Gap: {:.2%}'.format(GG))
     
     qprint("Warm Big M Method:")
@@ -138,7 +132,7 @@ def Hybrid_code(cpath, N, GG=.02):
 
     cp('bigm_output.txt', '{}/'.format(Instance_path))
     cp('Pickled_Data', '{}/'.format(Instance_path))
-    return min(BS), BTT, HS, time.time() - T1
+    return BS, BTT, HS, time.time() - T1
 
 
 @Timer

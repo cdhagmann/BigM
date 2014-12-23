@@ -1,0 +1,93 @@
+WarehouseVolume:[
+(1)	[100000000]
+]
+StoreVolume:[
+(1)	[10000000]
+(2)	[10000000]
+]
+StoreDemand:[
+(1	1	1)	[1340]
+(1	1	2)	[1236]
+(1	1	3)	[1693]
+(1	1	4)	[471]
+(1	1	5)	[1244]
+(1	2	1)	[1147]
+(1	2	2)	[1406]
+(1	2	3)	[990]
+(1	2	4)	[1481]
+(1	2	5)	[1247]
+(2	1	1)	[963]
+(2	1	2)	[911]
+(2	1	3)	[970]
+(2	1	4)	[1543]
+(2	1	5)	[1632]
+(2	2	1)	[1284]
+(2	2	2)	[687]
+(2	2	3)	[662]
+(2	2	4)	[857]
+(2	2	5)	[1692]
+]
+FixedCostVendorToWarehouse:[
+(1	1)	[253.17]
+]
+FixedCostWarehouseToStore:[
+(1	1)	[110.96]
+(1	2)	[297.11]
+]
+Variable_FixedCostVendorToWarehouse:[
+(1	1)	[884.41]
+]
+VariableCostVendorToWarehouse:[
+(1	1)	[0.067]
+]
+Variable_FixedCostWarehouseToStore:[
+(1	1)	[598.03]
+(1	2)	[975.07]
+]
+VariableCostWarehouseToStore:[
+(1	1)	[0.045]
+(1	2)	[0.074]
+]
+ProductVolume:[
+(1)	[0.03]
+(2)	[0.99]
+]
+ProductWeight:[
+(1)	[0.92]
+(2)	[0.69]
+]
+MapVendorToProduct:[
+(1	1)	[1]
+(1	2)	[1]
+]
+LeadTimeWarehouseToStores:[
+(1	1)	[0]
+(1	2)	[0]
+]
+StoreDemandForFashionProducts:[
+(1	1)	[4155]
+(1	2)	[4880]
+(2	1)	[6415]
+(2	2)	[2970]
+]
+FixedCostFashionVendorToWarehouse:[
+(1	1)	[186.09]
+]
+Variable_FixedCostFashionVendorToWarehouse:[
+(1	1)	[727.61]
+]
+VariableCostFashionVendorToWarehouse:[
+(1	1)	[0.055]
+]
+FashionProductVolume:[
+(1)	[0.19]
+(2)	[0.49]
+]
+FashionProductWeight:[
+(1)	[0.27]
+(2)	[0.3]
+]
+MapFashionVendorToProduct:[
+(1	1)	[1]
+(1	2)	[1]
+]

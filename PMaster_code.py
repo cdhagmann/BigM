@@ -5,11 +5,11 @@ from BigMModel import solve_big_m_model
 from contextlib import contextmanager
 
 
-BIG_M_TIMEOUT = 12 * 60 * 60
+BIG_M_TIMEOUT = 15 * 60 * 60
 
 
 def brief_pause(N):
-    time.sleep((.1 + random.random()) / N)
+    time.sleep((3 * random.random()) / N)
     
 def PB_func(cpath, kp, N):
     brief_pause(N)

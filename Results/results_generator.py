@@ -29,7 +29,7 @@ scaled_time_rows = []
 scaled_solution_rows = []
 
 methods = ['HEURISTIC', 'WARM START', 'BIG M']    
-for archive in glob.glob('*/*/streaming_output'):
+for archive in glob.glob('*/*/Overview.txt'):
     INSTANCE_SIZE = archive.split(os.path.sep)[0]
     ID = archive.split(os.path.sep)[1].split('_')[-1]
     

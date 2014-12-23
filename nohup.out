@@ -1,0 +1,219 @@
+Created WITPdataSet_v2q10s5p10t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+SLFVO3
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 6.45 seconds
+    MIN COST [Bhanu]: $47,263.48
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 6.64 seconds
+    MIN COST [Bhanu]: $51,015.59
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 8.69 seconds
+    MIN COST [Bhanu]: $46,894.26
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 9.28 seconds
+    MIN COST [Bhanu]: $47,340.30
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 9.89 seconds
+    MIN COST [Bhanu]: $46,916.37
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 10.74 seconds
+    MIN COST [Bhanu]: $48,355.60
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 10.96 seconds
+    MIN COST [Bhanu]: $48,355.60
+
+RESULTS [Bhanu]: 
+    TIME:  11.18 seconds
+    OBJ:  $46,894.26
+
+Optimality Gap: 2.00%
+Warm Big M Method:
+['i2'] ['j5', 'j6']
+Traceback (most recent call last):
+  File "PMaster.py", line 71, in <module>
+    main(cpath, Type)
+  File "PMaster.py", line 20, in main
+    BS, BT, HS, HT = Hybrid_code(cpath, N=N, GG=GG)
+  File "/home/cdhagmann/Documents/BigM/PMaster_code.py", line 137, in Hybrid_code
+    gap=GG)
+  File "/home/cdhagmann/Documents/BigM/BigMModel.py", line 484, in solve_big_m_model
+    results = opt.solve(instance, tee=True)
+  File "/usr/local/lib/python2.7/dist-packages/Pyomo-4.0-py2.7.egg/pyomo/opt/base/solvers.py", line 436, in solve
+    "Solver (%s) did not exit normally" % self.name )
+pyutilib.common._exceptions.ApplicationError: Solver (gurobi) did not exit normally
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+PVZAK9
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 48.20 seconds
+    MIN COST [Bhanu]: $87,123.48
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 48.63 seconds
+    MIN COST [Bhanu]: $85,951.18
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 55.17 seconds
+    MIN COST [Bhanu]: $91,574.12
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 56.97 seconds
+    MIN COST [Bhanu]: $86,379.41
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 1m 0.61s (60.61 seconds)
+    MIN COST [Bhanu]: $89,995.47
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 1m 12.82s (72.82 seconds)
+    MIN COST [Bhanu]: $87,022.25
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 1m 20.15s (80.15 seconds)
+    MIN COST [Bhanu]: $90,187.48
+
+RESULTS [Bhanu]: 
+    TIME:  80.33 seconds
+    OBJ:  $85,951.18
+
+Optimality Gap: 15.00%
+Warm Big M Method:
+['i3'] ['j6']
+	Selected Tech17: $79,149.57 [14.88%] (9m 42.29s (582.29 seconds))
+
+Big M Benchmark:
+Traceback (most recent call last):
+  File "PMaster.py", line 71, in <module>
+    main(cpath, Type)
+  File "PMaster.py", line 23, in main
+    PS, PT = BM_wrapper(cpath, GG=GG)
+  File "/home/cdhagmann/Documents/BigM/Function_Module.py", line 262, in _inner
+    Results = func(*args, **kwargs)
+  File "/home/cdhagmann/Documents/BigM/PMaster_code.py", line 151, in BM_wrapper
+    PS, PT = solve_big_m_model(gap=GG, time_limit=BIG_M_TIMEOUT)
+  File "/home/cdhagmann/Documents/BigM/BigMModel.py", line 484, in solve_big_m_model
+    results = opt.solve(instance, tee=True)
+  File "/usr/local/lib/python2.7/dist-packages/Pyomo-4.0-py2.7.egg/pyomo/opt/base/solvers.py", line 436, in solve
+    "Solver (%s) did not exit normally" % self.name )
+pyutilib.common._exceptions.ApplicationError: Solver (gurobi) did not exit normally
+Created WITPdataSet_v2q10s5p10t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+SM86LJ
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 6.78 seconds
+    MIN COST [Bhanu]: $49,640.76
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 7.07 seconds
+    MIN COST [Bhanu]: $48,250.38
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 7.74 seconds
+    MIN COST [Bhanu]: $51,783.04
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 8.06 seconds
+    MIN COST [Bhanu]: $51,783.04
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 9.27 seconds
+    MIN COST [Bhanu]: $49,381.80
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 11.75 seconds
+    MIN COST [Bhanu]: $50,108.23
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 11.83 seconds
+    MIN COST [Bhanu]: $47,573.18
+
+RESULTS [Bhanu]: 
+    TIME:  11.99 seconds
+    OBJ:  $47,573.18
+
+Optimality Gap: 2.00%
+Warm Big M Method:
+['i2', 'i3'] ['j4', 'j5']
+	Selected Tech10: $43,617.63 [2.00%] (38m 19.04s (2299.04 seconds))
+
+Big M Benchmark:
+Traceback (most recent call last):
+  File "PMaster.py", line 71, in <module>
+    main(cpath, Type)
+  File "PMaster.py", line 23, in main
+    PS, PT = BM_wrapper(cpath, GG=GG)
+  File "/home/cdhagmann/Documents/BigM/Function_Module.py", line 262, in _inner
+    Results = func(*args, **kwargs)
+  File "/home/cdhagmann/Documents/BigM/PMaster_code.py", line 151, in BM_wrapper
+    PS, PT = solve_big_m_model(gap=GG, time_limit=BIG_M_TIMEOUT)
+  File "/home/cdhagmann/Documents/BigM/BigMModel.py", line 484, in solve_big_m_model
+    results = opt.solve(instance, tee=True)
+  File "/usr/local/lib/python2.7/dist-packages/Pyomo-4.0-py2.7.egg/pyomo/opt/base/solvers.py", line 436, in solve
+    "Solver (%s) did not exit normally" % self.name )
+pyutilib.common._exceptions.ApplicationError: Solver (gurobi) did not exit normally
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+PQ95EE
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 46.80 seconds
+    MIN COST [Bhanu]: $85,864.93
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 48.89 seconds
+    MIN COST [Bhanu]: $87,781.13
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 52.29 seconds
+    MIN COST [Bhanu]: $85,687.84
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 52.54 seconds
+    MIN COST [Bhanu]: $86,687.38
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 1m 2.35s (62.35 seconds)
+    MIN COST [Bhanu]: $86,245.39
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 1m 13.62s (73.62 seconds)
+    MIN COST [Bhanu]: $85,773.66
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 1m 22.79s (82.79 seconds)
+    MIN COST [Bhanu]: $86,620.53
+
+RESULTS [Bhanu]: 
+    TIME:  83.00 seconds
+    OBJ:  $85,687.84
+
+Optimality Gap: 15.00%
+Warm Big M Method:
+['i2', 'i3'] ['j6']
+	Selected Tech17: $75,133.17 [14.74%] (30m 0.97s (1800.97 seconds))
+
+Big M Benchmark:
+Traceback (most recent call last):
+  File "PMaster.py", line 71, in <module>
+    main(cpath, Type)
+  File "PMaster.py", line 23, in main
+    PS, PT = BM_wrapper(cpath, GG=GG)
+  File "/home/cdhagmann/Documents/BigM/Function_Module.py", line 262, in _inner
+    Results = func(*args, **kwargs)
+  File "/home/cdhagmann/Documents/BigM/PMaster_code.py", line 151, in BM_wrapper
+    PS, PT = solve_big_m_model(gap=GG, time_limit=BIG_M_TIMEOUT)
+  File "/home/cdhagmann/Documents/BigM/BigMModel.py", line 484, in solve_big_m_model
+    results = opt.solve(instance, tee=True)
+  File "/usr/local/lib/python2.7/dist-packages/Pyomo-4.0-py2.7.egg/pyomo/opt/base/solvers.py", line 436, in solve
+    "Solver (%s) did not exit normally" % self.name )
+pyutilib.common._exceptions.ApplicationError: Solver (gurobi) did not exit normally

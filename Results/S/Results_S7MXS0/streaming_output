@@ -1,0 +1,42 @@
+Created WITPdataSet_v2q10s5p10t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+SM86LJ
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 6.78 seconds
+    MIN COST [Bhanu]: $49,640.76
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 7.07 seconds
+    MIN COST [Bhanu]: $48,250.38
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 7.74 seconds
+    MIN COST [Bhanu]: $51,783.04
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 8.06 seconds
+    MIN COST [Bhanu]: $51,783.04
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 9.27 seconds
+    MIN COST [Bhanu]: $49,381.80
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 11.75 seconds
+    MIN COST [Bhanu]: $50,108.23
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 11.83 seconds
+    MIN COST [Bhanu]: $47,573.18
+
+RESULTS [Bhanu]: 
+    TIME:  11.99 seconds
+    OBJ:  $47,573.18
+
+Optimality Gap: 2.00%
+Warm Big M Method:
+['i2', 'i3'] ['j4', 'j5']
+	Selected Tech10: $43,617.63 [2.00%] (38m 19.04s (2299.04 seconds))
+
+Big M Benchmark:

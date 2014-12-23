@@ -11,17 +11,17 @@ if '__main__' == __name__:
 
     ID = Type + id_generator(size=5)
 
-    if Type in GAP:
+    if Type in ('Test', 'S', 'P', 'M', 'L'):
         cpath = 'Results/{}/Results_{}'.format(Type, ID)
     else:
         cpath = 'Results/{}/Results_{}'.format('Misc', ID)
+    
+    mkpath(cpath)
     overview = path(cpath,'Overview.txt')
 
     print ID
     try:
-        with open(overview, 'w') as f:
-            with Redirect(f, f):
-                PBhanu(cpath, 7)
+        PBhanu(cpath, 7)
     finally:
         rm('*.pyc')
         rm('*.log')
@@ -29,4 +29,3 @@ if '__main__' == __name__:
         rm('*cs')
         rm('Pickled_Data')
         rm('*.txt')
-        prune_results_folder()

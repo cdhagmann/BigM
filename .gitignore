@@ -124,3 +124,5 @@ packages/
 
 #Test files
 *.testsettings
+
+*.WORKFLOW*

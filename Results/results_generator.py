@@ -11,13 +11,13 @@ from collections import defaultdict
 def objective_strip(line):
     raw_string = line.split()[-1]
     return float(re.sub(r'[^\d.]', '', raw_string))
-    
+
 def time_strip(line):
     raw_string = line.split()[-2]
     return float(raw_string)
-    
+
 def scale_list(lst):
-    return list(numpy.array(lst)/float(lst[1]))  
+    return list(numpy.array(lst)/float(min(lst)))  
 
 raw_rows = []
 scaled_rows = []
@@ -28,16 +28,16 @@ raw_solution_rows = []
 scaled_time_rows = []
 scaled_solution_rows = []
 
-methods = ['HEURISTIC', 'WARM START', 'BIG M']    
+methods = ['HEURISTIC', 'WARM START', 'BIG M']
 for archive in glob.glob('*/*/Overview.txt'):
     INSTANCE_SIZE = archive.split(os.path.sep)[0]
     ID = archive.split(os.path.sep)[1].split('_')[-1]
-    
+
     with open(archive, 'rb') as f:
         lines = f.readlines()
         lines = [l.strip() for l in lines]
-    
-    results = []    
+
+    results = []
     for idx, line in enumerate(lines):
         if 'RESULTS' in line:
             results.append(idx)
@@ -46,34 +46,34 @@ for archive in glob.glob('*/*/Overview.txt'):
         results.pop(0)
 
     times, solutions = [], []
-        
+
     for i, idx in enumerate(results):
-        METHOD = methods[i]           
+        METHOD = methods[i]
         SOLUTION = objective_strip(lines[idx+2])
         TIME = time_strip(lines[idx+1])
         raw_rows.append( (ID, INSTANCE_SIZE, METHOD, TIME, SOLUTION) )
-        
+
         times.append(TIME)
         solutions.append(SOLUTION)
 
     raw_time_rows.append( [ID, INSTANCE_SIZE] + times )
     raw_solution_rows.append( [ID, INSTANCE_SIZE] + solutions )
-    
+
     times = scale_list(times)
     solutions = scale_list(solutions)
 
     scaled_time_rows.append( [ID, INSTANCE_SIZE] + times )
     scaled_solution_rows.append( [ID, INSTANCE_SIZE] + solutions )
-    
-    for i, (TIME, SOLUTION) in enumerate(zip(times, solutions)):           
-        METHOD = methods[i]   
-        scaled_rows.append( (ID, INSTANCE_SIZE, METHOD, TIME, SOLUTION) )  
-        
+
+    for i, (TIME, SOLUTION) in enumerate(zip(times, solutions)):
+        METHOD = methods[i]
+        scaled_rows.append( (ID, INSTANCE_SIZE, METHOD, TIME, SOLUTION) )
+
 with open('RAW_DATA.csv', 'wb') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerow(('ID', 'INSTANCE_SIZE', 'METHOD', 'TIME', 'SOLUTION'))
     csv_writer.writerows(raw_rows)
-    
+
 with open('SCALED_DATA.csv', 'wb') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerow(('ID', 'INSTANCE_SIZE', 'METHOD', 'TIME', 'SOLUTION'))
@@ -88,7 +88,7 @@ with open('RAW_SOLUTION_DATA.csv', 'wb') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerow(('ID', 'INSTANCE_SIZE', 'HEURISTIC', 'WARM START', 'BIG M'))
     csv_writer.writerows(raw_solution_rows)
-    
+
 with open('SCALED_TIME_DATA.csv', 'wb') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerow(('ID', 'INSTANCE_SIZE', 'HEURISTIC', 'WARM START', 'BIG M'))
@@ -97,4 +97,4 @@ with open('SCALED_TIME_DATA.csv', 'wb') as f:
 with open('SCALED_SOLUTION_DATA.csv', 'wb') as f:
     csv_writer = csv.writer(f)
     csv_writer.writerow(('ID', 'INSTANCE_SIZE', 'HEURISTIC', 'WARM START', 'BIG M'))
-    csv_writer.writerows(scaled_solution_rows)    
+    csv_writer.writerows(scaled_solution_rows)

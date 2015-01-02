@@ -1,0 +1,36 @@
+Created WITPdataSet_v10q250s25p250t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+MGWSZI
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 10m 15.97s (615.97 seconds)
+    MIN COST [Bhanu]: $221,443.30
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 10m 23.10s (623.10 seconds)
+    MIN COST [Bhanu]: $219,932.90
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 10m 34.88s (634.88 seconds)
+    MIN COST [Bhanu]: $219,303.30
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 10m 44.63s (644.63 seconds)
+    MIN COST [Bhanu]: $219,899.80
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 11m 32.97s (692.97 seconds)
+    MIN COST [Bhanu]: $208,904.20
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 12m 1.21s (721.21 seconds)
+    MIN COST [Bhanu]: $200,644.00
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 12m 37.28s (757.28 seconds)
+    MIN COST [Bhanu]: $194,364.90
+
+RESULTS [Bhanu]: 
+    TIME:  758.13 seconds
+    OBJ:  $194,364.90
+

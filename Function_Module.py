@@ -10,14 +10,14 @@ from contextlib import contextmanager
 def ignored(*exceptions):
     '''
     Can be used to replace
-    
+
     try:
         code
     except Exception1, Exception2, ...:
         pass
-        
+
     using
-    
+
     with ignored(Exception1, Exception2, ...):
         code
     '''
@@ -25,18 +25,18 @@ def ignored(*exceptions):
         yield
     except exceptions:
         pass
-    
-     
+
+
 #-----------------------------------------------------------------------------
 #                          DEFINE TIMEOUT FUNCTION
 #-----------------------------------------------------------------------------
-        
+
 def timeout(func, args=(), kwargs=None, TIMEOUT=10, default=None, err=.05):
 
     if hasattr(args, "__iter__") and not isinstance(args, basestring):
         args = args
     else:
-        args = [args]    
+        args = [args]
     kwargs = {} if kwargs is None else kwargs
 
     pool = mp.Pool(processes = 1)
@@ -55,11 +55,11 @@ def timeout(func, args=(), kwargs=None, TIMEOUT=10, default=None, err=.05):
 def Timeit(command, setup=''):
     import timeit
     return timeit.Timer(command, setup=setup).timeit(1)
-            
+
 def timeit_timeout(command, setup='', TIMEOUT=10, default=None, err=.05):
     return timeout(Timeit, args=command, kwargs={'setup':setup},
                    TIMEOUT=TIMEOUT, default=default, err=err)
-                   
+
 #-----------------------------------------------------------------------------
 #                          DEFINE USEFUL FUNCTION
 #-----------------------------------------------------------------------------
@@ -73,15 +73,15 @@ def htime(s):
     else:
         S = s % 60
         s -= S
-        
+
         H = int(float(s) / 3600)
         s -= float(H) * 3600
-        
+
         M = int(float(s) / 60)
         s -= float(M) * 60
 
         assert s < 1
-        
+
     return (H,M,S)
 
 def ptime(s):
@@ -93,7 +93,7 @@ def ptime(s):
         m = '' if M == 0 else '{}m '.format(M)
         t = '({0:.2f} seconds)'.format(s)
         s = '' if S == 0 else '{0:.2f}s '.format(S)
-        return h + m + s + t  
+        return h + m + s + t
 
 
 def pretty_string(string, t=None, n=None, to_write=False):
@@ -104,14 +104,14 @@ def pretty_string(string, t=None, n=None, to_write=False):
 
     pre = '' if t is None else (' ' * 4) * t
 
-    return pre + string + suf  
+    return pre + string + suf
 
 def qprint(string, t=None, n=None):
     print pretty_string(string, t, n)
-    
+
 def qwrite(filename, string, t=None, n=None):
     string = pretty_string(string, t, n, to_write=True)
-    
+
     if type(filename) == str:
         with open(filename, 'a') as f:
             f.write(string)
@@ -121,13 +121,13 @@ def qwrite(filename, string, t=None, n=None):
         filename = str(filename)
         with open(filename, 'a') as f:
             f.write(string)
-  
-       
-'''Print to STDOUT and to the file.'''   
+
+
+'''Print to STDOUT and to the file.'''
 def tee_print(filename,string, t=None, n=None):
     qprint(          string, t, n)
     qwrite(filename, string, t, n)
-        
+
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
 	return ''.join(random.choice(chars) for x in range(size))
 
@@ -141,7 +141,7 @@ def bash_command(command, output=False):
 
     if output:
         print '\n'.join(lines)
-        
+
     return lines
 
 
@@ -150,15 +150,15 @@ def bash_command(command, output=False):
 def cp(src, dst):
     '''
     Copy files to dst (similar to cp in UNIX). Takes '*' and '?'
-    ''' 
+    '''
     for f in glob.iglob(src):
         shutil.copy2(f, dst)
 
 
 def rm(src):
     '''
-    Remove files and directories (similar to rm -r in UNIX). Takes '*' and '?'. 
-    ''' 
+    Remove files and directories (similar to rm -r in UNIX). Takes '*' and '?'.
+    '''
     for f in glob.iglob(src):
         if os.path.isfile(f):
             os.remove(f)
@@ -168,8 +168,8 @@ def rm(src):
 
 def mv(src, dst):
     '''
-    Move files and directories (similar to mv in UNIX). Takes '*' and '?'. 
-    ''' 
+    Move files and directories (similar to mv in UNIX). Takes '*' and '?'.
+    '''
     for f in glob.iglob(src):
         cp(f, dst)
         rm(f)
@@ -183,9 +183,9 @@ def cd(path):
 
 
 def prune_results_folder():
-    for archive in glob.iglob('Results/*/*'):
+    for archive in glob.glob('Results/S/*') + glob.glob('Results/P/*'):
         if not os.path.isfile(archive + '/Overview.txt'):
-            bash_command('rm -r {}'.format(archive)) 
+            bash_command('rm -r {}'.format(archive))
 
 
 
@@ -207,7 +207,7 @@ def var_round(num, n=16):
             break
 
     return int(b) if int(b) == b else b
-   
+
 class Redirect(object):
     def __init__(self, stdout=None, stderr=None):
         self._stdout = stdout or sys.stdout
@@ -243,7 +243,7 @@ def argmin(A):
     O = min(A)
     I = A.index(O)
     return O, I
-    
+
 def argmax(A):
     O = max(A)
     I = A.index(O)
@@ -264,16 +264,16 @@ def Timer(func):
         return Results, T2 - T1
     return _inner
 
-      
+
 class OrderedSet(list):
     def __init__(self, iterable=None):
         list.__init__(self)
         if iterable is not None:
             assert hasattr(iterable, '__iter__')
-            
+
             for item in iterable:
                 self.append(item)
-            
+
     def append(self, item):
         if item not in self:
             list.append(self, item)
@@ -282,7 +282,7 @@ class OrderedSet(list):
 
 
 
-    
+
 #-----------------------------------------------------------------------------
 #                          DEFINE CURRENCY FUNCTION
 #-----------------------------------------------------------------------------
@@ -307,7 +307,7 @@ def float_to_decimal(f):
         ctx.flags[decimal.Inexact] = False
         ctx.prec *= 2
         result = ctx.divide(numerator, denominator)
-    return result 
+    return result
 
 def f(number, sigfig):
     assert( sigfig > 0 )
@@ -318,10 +318,10 @@ def f(number, sigfig):
         d = float_to_decimal(float(number))
 
     sign, digits, exponent = d.as_tuple()
-    
+
     if len(digits) < sigfig:
         digits = list(digits)
-        digits.extend([0] * (sigfig - len(digits)))    
+        digits.extend([0] * (sigfig - len(digits)))
     shift=d.adjusted()
     result=int(''.join(map(str,digits[:sigfig])))
     # Round the result
@@ -351,7 +351,7 @@ def magic_format(num, group_frac=True):
     dec = '.'
 
     n = float(('%E' % num)[:-4:])
-    sigfig = len(str(n)) - (1 if '.' in str(n) else 0) 
+    sigfig = len(str(n)) - (1 if '.' in str(n) else 0)
 
     s = '{0:.2f}'.format(float(f(num,sigfig)))
 
@@ -368,13 +368,13 @@ def magic_format(num, group_frac=True):
             new_s = s[:point:][::-1]
         for idx,char in enumerate(new_d):
             ans += char
-            if (idx+1)%3 == 0 and (idx+1) != len(new_d): 
+            if (idx+1)%3 == 0 and (idx+1) != len(new_d):
                 ans += sep
         else: ans = ans[::-1] + (dec if point != None else '')
         for idx,char in enumerate(new_s):
             ans += char
-            if (idx+1)%3 == 0 and (idx+1) != len(new_s): 
-                ans += sep 
+            if (idx+1)%3 == 0 and (idx+1) != len(new_s):
+                ans += sep
         else:
             ans = ans[::-1]
     else:
@@ -384,6 +384,3 @@ def magic_format(num, group_frac=True):
 def curr(val):
     s_val = magic_format(abs(val))
     return '${}'.format(s_val) if val >= 0 else '-${}'.format(s_val)
-    
-
-                           

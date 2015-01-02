@@ -1,0 +1,22 @@
+RESULTS [Bhanu]: 
+    TIME:  83.19 seconds
+    OBJ:  $83,189.67
+
+RESULTS [Hybrid]: 
+    TIME:  1059.97 seconds
+    OBJ:  $77,430.04
+
+RESULTS [Pyomo]: 
+    TIME:  26589.72 seconds
+    OBJ:  $76,603.36
+
+
+COMPARISON [Hybrid vs Bhanu]: 
+    ERROR: 7.44%
+    SPEEDUP: 0.08
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: -1.07%
+    SPEEDUP: 25.09
+
+

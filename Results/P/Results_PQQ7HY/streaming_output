@@ -1,0 +1,135 @@
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+PA0MIY
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 51.45 seconds
+    MIN COST [Bhanu]: $92,685.31
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 57.14 seconds
+    MIN COST [Bhanu]: $90,288.32
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 57.92 seconds
+    MIN COST [Bhanu]: $98,361.89
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 57.79 seconds
+    MIN COST [Bhanu]: $91,042.91
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 58.42 seconds
+    MIN COST [Bhanu]: $91,042.91
+
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+P9TZ1M
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 1m 37.72s (97.72 seconds)
+    MIN COST [Bhanu]: $99,572.53
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 1m 39.57s (99.57 seconds)
+    MIN COST [Bhanu]: $99,572.53
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 1m 41.17s (101.17 seconds)
+    MIN COST [Bhanu]: $89,683.17
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 1m 46.36s (106.36 seconds)
+    MIN COST [Bhanu]: $98,640.13
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 1m 48.20s (108.20 seconds)
+    MIN COST [Bhanu]: $97,899.02
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 1m 59.89s (119.89 seconds)
+    MIN COST [Bhanu]: $90,161.21
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 2m 0.72s (120.72 seconds)
+    MIN COST [Bhanu]: $91,294.64
+
+RESULTS [Bhanu]: 
+    TIME:  121.00 seconds
+    OBJ:  $89,683.17
+
+Optimality Gap: 15.00%
+Warm Big M Method:
+['i3'] ['j6']
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+PMX3W3
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+PQQ7HY
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 48.27 seconds
+    MIN COST [Bhanu]: $94,349.42
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 54.08 seconds
+    MIN COST [Bhanu]: $93,526.92
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 56.04 seconds
+    MIN COST [Bhanu]: $95,312.76
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 1m 6.60s (66.60 seconds)
+    MIN COST [Bhanu]: $94,282.01
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 1m 12.06s (72.06 seconds)
+    MIN COST [Bhanu]: $104,948.00
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 1m 18.34s (78.34 seconds)
+    MIN COST [Bhanu]: $94,140.30
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 1m 21.45s (81.45 seconds)
+    MIN COST [Bhanu]: $94,528.37
+
+RESULTS [Bhanu]: 
+    TIME:  81.86 seconds
+    OBJ:  $93,526.92
+
+Optimality Gap: 15.00%
+Warm Big M Method:
+['i3', 'i4'] ['j6']
+	Selected Tech17: $86,225.74 [14.91%] (22m 48.32s (1368.32 seconds))
+
+Big M Benchmark:
+	Selected Tech17: $86,071.15 [14.97%] (4h 25m 25.88s (15925.88 seconds))
+##########
+RESULTS [Bhanu]: 
+    TIME:  81.86 seconds
+    OBJ:  $93,526.92
+
+RESULTS [Hybrid]: 
+    TIME:  1450.31 seconds
+    OBJ:  $86,225.74
+
+RESULTS [Pyomo]: 
+    TIME:  15926.00 seconds
+    OBJ:  $86,071.15
+
+
+COMPARISON [Hybrid vs Bhanu]: 
+    ERROR: 8.47%
+    SPEEDUP: 0.06
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: -0.18%
+    SPEEDUP: 10.98
+
+
+##########
+

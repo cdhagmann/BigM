@@ -1,0 +1,68 @@
+Created WITPdataSet_v5q50s10p50t5.txt
+Compiled WITP-TPH.exe
+Pickled Data
+P9T150
+Instance 1 of 7:
+    RUN TIME [Bhanu]: 47.72 seconds
+    MIN COST [Bhanu]: $95,338.30
+
+Instance 2 of 7:
+    RUN TIME [Bhanu]: 50.76 seconds
+    MIN COST [Bhanu]: $90,322.52
+
+Instance 3 of 7:
+    RUN TIME [Bhanu]: 56.16 seconds
+    MIN COST [Bhanu]: $91,380.73
+
+Instance 4 of 7:
+    RUN TIME [Bhanu]: 1m 8.85s (68.85 seconds)
+    MIN COST [Bhanu]: $99,218.34
+
+Instance 5 of 7:
+    RUN TIME [Bhanu]: 1m 11.42s (71.42 seconds)
+    MIN COST [Bhanu]: $90,366.30
+
+Instance 6 of 7:
+    RUN TIME [Bhanu]: 1m 12.02s (72.02 seconds)
+    MIN COST [Bhanu]: $90,366.30
+
+Instance 7 of 7:
+    RUN TIME [Bhanu]: 1m 12.73s (72.73 seconds)
+    MIN COST [Bhanu]: $90,619.14
+
+RESULTS [Bhanu]: 
+    TIME:  73.29 seconds
+    OBJ:  $90,322.52
+
+Optimality Gap: 15.00%
+Warm Big M Method:
+['i3', 'i4'] ['j6']
+	Selected Tech17: $83,204.17 [14.91%] (29m 34.98s (1774.98 seconds))
+
+Big M Benchmark:
+	Selected Tech17: $83,093.70 [14.85%] (4h 37m 35.40s (16655.40 seconds))
+##########
+RESULTS [Bhanu]: 
+    TIME:  73.29 seconds
+    OBJ:  $90,322.52
+
+RESULTS [Hybrid]: 
+    TIME:  1848.39 seconds
+    OBJ:  $83,204.17
+
+RESULTS [Pyomo]: 
+    TIME:  16655.51 seconds
+    OBJ:  $83,093.70
+
+
+COMPARISON [Hybrid vs Bhanu]: 
+    ERROR: 8.56%
+    SPEEDUP: 0.04
+
+COMPARISON [Hybrid vs Pyomo]: 
+    ERROR: -0.13%
+    SPEEDUP: 9.01
+
+
+##########
+
